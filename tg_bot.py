@@ -16,7 +16,7 @@ async def start_command(message: types.Message):
     await message.reply("Привет! Напиши мне город и я пришлю сводку погоды)")
     
     
-@dp.message_handler()
+@dp.message_handler() 
 async def get_weather(message: types.Message):
     code_to_smile = {
         "Clear": "Ясно \U00002600",
@@ -56,7 +56,7 @@ async def get_weather(message: types.Message):
         
         await message.reply (f"***\{datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}/***\n"
             f"Погода в городе: {city}\nТемпература: {cur_weather} C° {wd}\nМакс. температура: {max_temp} C°\nМин. температура: {min_temp} C°\n"
-            f"Ощущение: {feel}C°\nДавление: {pressure} мм.рт.ст.\nВлажность: {humidity}%\nВетер: {wind}м/с\n"
+            f"Ощущение: {feel} C°\nДавление: {pressure} мм.рт.ст.\nВлажность: {humidity}%\nВетер: {wind}м/с\n"
             f"Восход солнца: {sunrise_time}\nЗакат солнца: {sunset_time}\nПродолжительность дня: {length_of_the_day}\n"
             f"Хорошего Дня!")
     
